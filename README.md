@@ -255,6 +255,10 @@ python -m build
 python -m twine check dist/*
 ```
 
+For a no-local-build release, push a `v*` tag to GitHub and let
+`.github/workflows/release.yml` build and publish the package from Actions using
+trusted publishing.
+
 See the [documentation index](docs/README.md) for installation, usage, CLI,
 configuration, API, developer, contributing, troubleshooting, and release guides.
 

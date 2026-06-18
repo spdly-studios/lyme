@@ -42,9 +42,21 @@ cognis-os oms --help
 
 ## Publication
 
-Publish first to a staging index when available, verify installation by distribution name,
-then publish the exact already-validated artifacts to the production index. Do not rebuild
-between staging and production. Tag the same source revision and attach checksums/release notes.
+The repository includes a GitHub Actions workflow at
+`.github/workflows/release.yml` that builds the package on every tag push matching `v*`
+and publishes the exact built artifacts to PyPI with trusted publishing.
+
+Recommended release flow:
+
+1. Update the version in `pyproject.toml`.
+2. Create a git tag such as `v0.1.1`.
+3. Push the tag to GitHub.
+4. Let GitHub Actions build the source and wheel distributions.
+5. Confirm the publish job uploads the same artifacts to PyPI.
+
+If you want a staged release first, keep the workflow as-is but point the `publish` job to
+TestPyPI in a separate branch or manually triggered workflow. Do not rebuild between staging
+and production. Tag the same source revision and attach checksums or release notes.
 
 Never commit or print repository tokens. Use trusted publishing or scoped, short-lived
 credentials supplied by the CI secret manager.
