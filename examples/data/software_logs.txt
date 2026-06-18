@@ -1,0 +1,5 @@
+2026-06-18 08:01:22 User Alice logged in
+2026-06-18 08:01:25 Temperature = 28.5 C
+2026-06-18 08:01:28 Battery Voltage: 4.18V
+2026-06-18 08:01:30 Motor speed changed to 500 RPM
+2026-06-18 08:01:32 User Alice logged out

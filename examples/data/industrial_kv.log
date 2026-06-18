@@ -1,0 +1,4 @@
+time=1000,temp=45.2 C,pressure=101.3 kPa,valve_status=on
+time=1001,temp=45.5 C,pressure=101.4 kPa,valve_status=on
+time=1002,temp=46.0 C,pressure=101.2 kPa,valve_status=off
+time=1003,temp=45.8 C,pressure=101.5 kPa,valve_status=off

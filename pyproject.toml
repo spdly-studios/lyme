@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognis-os"
+version = "0.1.0"
+description = "Observation canonicalization, knowledge discovery, and operational model synthesis"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "Cognis OS contributors"}]
+keywords = ["telemetry", "data-normalization", "knowledge-discovery", "digital-twin"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pyarrow>=14.0",
+    "pint>=0.23",
+    "python-dateutil>=2.8",
+    "pandas>=2.0",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "statsmodels>=0.14",
+    "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2",
+    "ruff>=0.5",
+    "twine>=5.0",
+]
+
+[project.scripts]
+cognis-os = "cognis_os.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cognis_os*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+cognis_os = ["py.typed"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = ["artifacts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

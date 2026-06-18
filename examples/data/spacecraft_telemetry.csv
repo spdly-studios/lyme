@@ -1,0 +1,6 @@
+timestamp,temp,motor_speed,pitch,battery
+1,30.5 C,100 rpm,5 deg,4.18V
+2,31.0 C,200 rpm,5 deg,4.17V
+3,31.2 C,220 rpm,5 deg,4.17V
+4,32.0 C,300 rpm,7 deg,4.16V
+5,32.5 C,350 rpm,10 deg,4.15V
