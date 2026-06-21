@@ -3,17 +3,17 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cognis-os"
-version = "0.1.1"
+name = "lyme"
+version = "0.1.0"
 description = "Observation canonicalization, knowledge discovery, and operational model synthesis"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{name = "Cognis OS contributors"}]
 keywords = ["telemetry", "data-normalization", "knowledge-discovery", "digital-twin"]
 classifiers = [
     "Development Status :: 3 - Alpha",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -39,7 +39,7 @@ dev = [
 ]
 
 [project.scripts]
-cognis-os = "cognis_os.cli:main"
+lyme = "cognis_os.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -32,12 +32,12 @@ to `MANIFEST.in` and package discovery configuration.
 ```bash
 python -m venv release-venv
 # activate the environment
-python -m pip install dist/cognis_os-<version>-py3-none-any.whl
+python -m pip install dist/lyme-<version>-py3-none-any.whl
 python -c "import cognis_os; from cognis_os import Canonicalizer, KnowledgeSynthesisEngine, OperationalModelSynthesizer"
-cognis-os --help
-cognis-os uoc --help
-cognis-os kse --help
-cognis-os oms --help
+lyme --help
+lyme uoc --help
+lyme kse --help
+lyme oms --help
 ```
 
 ## Publication
@@ -49,7 +49,7 @@ and publishes the exact built artifacts to PyPI with trusted publishing.
 Recommended release flow:
 
 1. Update the version in `pyproject.toml`.
-2. Create a git tag such as `v0.1.1`.
+2. Create a git tag such as `v0.1.0`.
 3. Push the tag to GitHub.
 4. Let GitHub Actions build the source and wheel distributions.
 5. Confirm the publish job uploads the same artifacts to PyPI.

@@ -35,7 +35,7 @@ jobs:
       - name: Upload distribution artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cognis-os-dist
+          name: lyme-dist
           path: dist/*
 
   publish:
@@ -44,12 +44,12 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/cognis-os
+      url: https://pypi.org/p/lyme
     steps:
       - name: Download distribution artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cognis-os-dist
+          name: lyme-dist
           path: dist
 
       - name: Publish package to PyPI

@@ -29,7 +29,7 @@ For editable development with packaging and lint tools:
 python -m pip install -e ".[dev]"
 ```
 
-Installing the package creates one command: `cognis-os`. Its `uoc`, `kse`, and `oms`
+Installing the package creates one command: `lyme`. Its `uoc`, `kse`, and `oms`
 subcommands run the internal pipeline stages.
 
 ## Fastest complete example
@@ -87,9 +87,9 @@ already has an aligned state matrix.
 The commands exchange files through one output directory:
 
 ```bash
-cognis-os uoc --input telemetry.csv --output-dir artifacts/run
-cognis-os kse --input artifacts/run/aligned_state_matrix.csv --output-dir artifacts/run
-cognis-os oms --input-dir artifacts/run --matrix artifacts/run/aligned_state_matrix.csv --output-dir artifacts/run
+lyme uoc --input telemetry.csv --output-dir artifacts/run
+lyme kse --input artifacts/run/aligned_state_matrix.csv --output-dir artifacts/run
+lyme oms --input-dir artifacts/run --matrix artifacts/run/aligned_state_matrix.csv --output-dir artifacts/run
 ```
 
 Run any command with `--help` for its current options. The CLI is convenient for batch
