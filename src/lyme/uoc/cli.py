@@ -23,7 +23,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(
-        description="Cognis OS — Universal Observation Canonicalizer (UOC) CLI"
+        description="Lyme - Universal Observation Canonicalizer (UOC) CLI"
     )
     parser.add_argument(
         "--input",

@@ -33,7 +33,7 @@ to `MANIFEST.in` and package discovery configuration.
 python -m venv release-venv
 # activate the environment
 python -m pip install dist/lyme-<version>-py3-none-any.whl
-python -c "import cognis_os; from cognis_os import Canonicalizer, KnowledgeSynthesisEngine, OperationalModelSynthesizer"
+python -c "import lyme; from lyme import Canonicalizer, KnowledgeSynthesisEngine, OperationalModelSynthesizer"
 lyme --help
 lyme uoc --help
 lyme kse --help

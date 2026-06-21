@@ -9,7 +9,7 @@ complete pip error when reporting failures.
 ## Command not found
 
 The console scripts are created only after installation. Activate the correct environment and
-check `python -m pip show cognis-os`. As a diagnostic, invoke `python -m uoc.cli --help` using
+check `python -m pip show lyme`. As a diagnostic, invoke `python -m uoc.cli --help` using
 the same interpreter.
 
 ## Input is parsed incorrectly
@@ -68,7 +68,7 @@ This does not normally change correctness.
 
 Include:
 
-1. Cognis OS version or source revision.
+1. Lyme version or source revision.
 2. Python, OS, architecture, and dependency versions.
 3. The smallest sanitized input that reproduces the problem.
 4. Exact command or Python snippet and configuration.
@@ -83,7 +83,7 @@ preserving data types, missingness, ordering, and the condition that triggers th
 
 ```bash
 python --version
-python -m pip show cognis-os
+python -m pip show lyme
 python -m pip freeze
 python examples/pipeline.py
 ```

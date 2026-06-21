@@ -177,7 +177,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(
-        description="Cognis OS — Operational Model Synthesizer (OMS) CLI"
+        description="Lyme - Operational Model Synthesizer (OMS) CLI"
     )
     parser.add_argument(
         "--input-dir",

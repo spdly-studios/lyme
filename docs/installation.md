@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Cognis OS requires Python 3.11 or newer. Its numerical stack includes PyArrow, pandas,
+Lyme requires Python 3.11 or newer. Its numerical stack includes PyArrow, pandas,
 NumPy, SciPy, scikit-learn, statsmodels, NetworkX, Pint, and python-dateutil. A standard
 CPython installation is recommended.
 
@@ -21,7 +21,7 @@ From the repository root:
 python -m pip install .
 ```
 
-This installs one `cognis_os` package and creates one `cognis-os` console command.
+This installs one `lyme` package and creates one `lyme` console command.
 The UOC, KSE, and OMS stages live inside the unified package.
 
 Use a virtual environment to isolate dependencies:
@@ -45,11 +45,11 @@ loads package code from `src/`, so source changes take effect without reinstalli
 ## Verify installation
 
 ```bash
-python -c "from cognis_os import Canonicalizer, KnowledgeSynthesisEngine, OperationalModelSynthesizer; print('Cognis OS ready')"
-cognis-os --help
-cognis-os uoc --help
-cognis-os kse --help
-cognis-os oms --help
+python -c "from lyme import Canonicalizer, KnowledgeSynthesisEngine, OperationalModelSynthesizer; print('Lyme ready')"
+lyme --help
+lyme uoc --help
+lyme kse --help
+lyme oms --help
 ```
 
 From a source checkout, run the complete example:
@@ -65,7 +65,7 @@ Expected output reports 5,000 observations and writes generated files under
 
 ```bash
 python -m pip install --upgrade .
-python -m pip uninstall cognis-os
+python -m pip uninstall lyme
 ```
 
-Package imports use `cognis_os`; the distribution name used by pip is `cognis-os`.
+Package imports use `lyme`; the distribution name used by pip is `lyme`.

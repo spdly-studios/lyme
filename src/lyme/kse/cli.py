@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Command-Line Interface (CLI) for the Knowledge Synthesis Engine (KSE).
-"""
+"""Command-Line Interface (CLI) for the Knowledge Synthesis Engine (KSE)."""
 
 from __future__ import annotations
 
@@ -20,13 +19,10 @@ from .ingestion import load_csv, load_parquet
 
 
 def main() -> None:
-    # Reconfigure console output to UTF-8 to prevent encoding crashes on Windows
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
-    parser = argparse.ArgumentParser(
-        description="Cognis OS — Knowledge Synthesis Engine (KSE) CLI"
-    )
+    parser = argparse.ArgumentParser(description="Lyme - Knowledge Synthesis Engine (KSE) CLI")
     parser.add_argument(
         "--input",
         type=str,
@@ -48,7 +44,7 @@ def main() -> None:
         print(
             f"Error: Input file '{input_path}' not found.\n"
             f"Please run Component 1 canonicalizer first:\n"
-            f"  cognis-os uoc\n",
+            f"  lyme uoc\n",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -65,7 +61,6 @@ def main() -> None:
 
     print("\n==================================================")
     print("2. Synthesizing system model and operational rules...")
-    # Initialize Engine with verbose configuration
     config = KSEConfig(verbose=True)
     engine = KnowledgeSynthesisEngine(config)
     model = engine.analyze(ingest_res)
@@ -73,25 +68,20 @@ def main() -> None:
     print("\n==================================================")
     print("3. Exporting synthesised operational knowledge...")
 
-    # Paths
     report_file = output_dir / "kse_report.md"
     graph_file = output_dir / "kse_graph.json"
     rules_file = output_dir / "kse_rules.json"
     rel_file = output_dir / "kse_relationships.json"
 
-    # Export human-readable Markdown Report (L1-L5)
     MarkdownReportExporter().export(model, report_file)
     print(f"   ✓ Markdown Report saved to:       {report_file}")
 
-    # Export machine-readable Knowledge Graph (L5)
     GraphJSONExporter().export(model, graph_file)
     print(f"   ✓ Knowledge Graph saved to:       {graph_file}")
 
-    # Export rule set (L3)
     RulesJSONExporter().export(model, rules_file)
     print(f"   ✓ Rule set saved to:              {rules_file}")
 
-    # Export relationship database (L1-L2)
     RelationshipsJSONExporter().export(model, rel_file)
     print(f"   ✓ Relationships database saved to: {rel_file}")
 

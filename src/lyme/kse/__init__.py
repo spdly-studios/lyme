@@ -1,7 +1,7 @@
 """
-Cognis OS — Knowledge Synthesis Engine (KSE)
+Lyme - Knowledge Synthesis Engine (KSE)
 
-Component 2 of the Cognis OS pipeline.
+Component 2 of the Lyme pipeline.
 
 Receives canonical observations from the Universal Observation Canonicalizer
 (UOC, Component 1) and automatically discovers interpretable operational

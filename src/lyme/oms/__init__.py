@@ -1,7 +1,7 @@
 """
 Operational Model Synthesizer (OMS) Package.
 
-Cognis OS Component 3 — Synthesizes discovered relationships, dependencies, rules,
+Lyme Component 3 - Synthesizes discovered relationships, dependencies, rules,
 and operational states into a unified operational theory and executable Digital Twin.
 """
 

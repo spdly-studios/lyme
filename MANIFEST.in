@@ -1,6 +1,6 @@
 include LICENSE
 include README.md
 include pyproject.toml
-recursive-include src/cognis_os py.typed
+recursive-include src/lyme py.typed
 prune artifacts
 global-exclude __pycache__ *.py[cod]

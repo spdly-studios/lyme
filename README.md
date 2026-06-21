@@ -1,12 +1,12 @@
-# Cognis OS
+# Lyme
 
-Cognis OS is a Python toolkit that turns heterogeneous time-series observations
+Lyme is a Python toolkit that turns heterogeneous time-series observations
 into an interpretable operational model and executable digital twin. It contains
 one package with three pipeline stages:
 
-1. **UOC** (`cognis_os.uoc`) parses, types, normalizes, aligns, and exports observations.
-2. **KSE** (`cognis_os.kse`) discovers correlations, lagged influence, rules, modes, and transitions.
-3. **OMS** (`cognis_os.oms`) synthesizes subsystems, influence chains, state machines, equations,
+1. **UOC** (`lyme.uoc`) parses, types, normalizes, aligns, and exports observations.
+2. **KSE** (`lyme.kse`) discovers correlations, lagged influence, rules, modes, and transitions.
+3. **OMS** (`lyme.oms`) synthesizes subsystems, influence chains, state machines, equations,
    reports, and a digital twin.
 
 The project is currently alpha software. Discovered relationships and equations are
@@ -51,10 +51,10 @@ The preferred production integration keeps the model in memory between component
 ```python
 from pathlib import Path
 
-from cognis_os import DigitalTwin, KSEConfig, KnowledgeSynthesisEngine
-from cognis_os import OMSConfig, OperationalModelSynthesizer, UOCConfig, Canonicalizer
-from cognis_os.kse import load_from_uoc
-from cognis_os.uoc import DataType
+from lyme import DigitalTwin, KSEConfig, KnowledgeSynthesisEngine
+from lyme import OMSConfig, OperationalModelSynthesizer, UOCConfig, Canonicalizer
+from lyme.kse import load_from_uoc
+from lyme.uoc import DataType
 
 canonicalizer = Canonicalizer(
     UOCConfig(
@@ -93,7 +93,7 @@ lyme oms --input-dir artifacts/run --matrix artifacts/run/aligned_state_matrix.c
 ```
 
 Run any command with `--help` for its current options. The CLI is convenient for batch
-jobs; the Python API is preferred when embedding Cognis OS in an application because it
+jobs; the Python API is preferred when embedding Lyme in an application because it
 avoids reconstructing the KSE model from exported JSON.
 
 ## UOC: canonicalizing observations
@@ -101,7 +101,7 @@ avoids reconstructing the KSE model from exported JSON.
 ### Configuration
 
 ```python
-from cognis_os.uoc import (
+from lyme.uoc import (
     AlignmentStrategy,
     Canonicalizer,
     DataType,
@@ -171,7 +171,7 @@ analysis; other columns remain available in `raw_df` but are not analyzed.
 
 ```python
 import pandas as pd
-from cognis_os.kse import KnowledgeSynthesisEngine, KSEConfig, load_csv, load_dataframe, load_parquet
+from lyme.kse import KnowledgeSynthesisEngine, KSEConfig, load_csv, load_dataframe, load_parquet
 
 ingestion = load_csv("state_matrix.csv")
 # ingestion = load_parquet("state_matrix.parquet")
@@ -188,7 +188,7 @@ model = engine.analyze(ingestion)
 Export results with:
 
 ```python
-from cognis_os.kse.exporters import (
+from lyme.kse.exporters import (
     GraphJSONExporter,
     MarkdownReportExporter,
     RelationshipsJSONExporter,
@@ -212,7 +212,7 @@ recommended because equation fitting and transition inference have more evidence
 the metadata-only fallback.
 
 ```python
-from cognis_os.oms import (
+from lyme.oms import (
     DigitalTwin,
     DigitalTwinPythonExporter,
     JSONTheoryExporter,
@@ -238,7 +238,7 @@ is the embeddable runtime class.
 ## Repository layout
 
 ```text
-src/cognis_os/     Unified production package
+src/lyme/          Unified production package
   uoc/             Observation parsing, normalization, alignment, and export
   kse/             Knowledge analysis, assembly, graph construction, and export
   oms/             Operational synthesis, reporting, equations, and twin runtime

@@ -17,10 +17,10 @@ pipeline when you only need canonicalization or discovery.
 ```python
 from pathlib import Path
 
-from cognis_os.kse import KSEConfig, KnowledgeSynthesisEngine, load_from_uoc
-from cognis_os.kse.exporters import MarkdownReportExporter
-from cognis_os.oms import DigitalTwin, JSONTheoryExporter, OMSConfig, OperationalModelSynthesizer
-from cognis_os.uoc import Canonicalizer, DataType, ExportConfig, UOCConfig
+from lyme.kse import KSEConfig, KnowledgeSynthesisEngine, load_from_uoc
+from lyme.kse.exporters import MarkdownReportExporter
+from lyme.oms import DigitalTwin, JSONTheoryExporter, OMSConfig, OperationalModelSynthesizer
+from lyme.uoc import Canonicalizer, DataType, ExportConfig, UOCConfig
 
 output = Path("artifacts/run")
 output.mkdir(parents=True, exist_ok=True)
@@ -92,7 +92,7 @@ carries the last value; interpolation estimates numeric values between known poi
 
 ```python
 import pandas as pd
-from cognis_os.kse import KnowledgeSynthesisEngine, load_dataframe
+from lyme.kse import KnowledgeSynthesisEngine, load_dataframe
 
 df = pd.read_csv("already_aligned.csv")
 model = KnowledgeSynthesisEngine().analyze(load_dataframe(df))

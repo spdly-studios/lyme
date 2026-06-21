@@ -1,4 +1,4 @@
-"""Run the complete Cognis OS API pipeline on sample telemetry.
+"""Run the complete Lyme API pipeline on sample telemetry.
 
 Install the project first (``pip install .``), then run:
 
@@ -7,14 +7,14 @@ Install the project first (``pip install .``), then run:
 
 from pathlib import Path
 
-from cognis_os.kse import KSEConfig, KnowledgeSynthesisEngine, load_from_uoc
-from cognis_os.kse.exporters import (
+from lyme.kse import KSEConfig, KnowledgeSynthesisEngine, load_from_uoc
+from lyme.kse.exporters import (
     GraphJSONExporter,
     MarkdownReportExporter,
     RelationshipsJSONExporter,
     RulesJSONExporter,
 )
-from cognis_os.oms import (
+from lyme.oms import (
     DigitalTwin,
     DigitalTwinPythonExporter,
     JSONTheoryExporter,
@@ -22,7 +22,7 @@ from cognis_os.oms import (
     OMSConfig,
     OperationalModelSynthesizer,
 )
-from cognis_os.uoc import Canonicalizer, DataType, ExportConfig, UOCConfig
+from lyme.uoc import Canonicalizer, DataType, ExportConfig, UOCConfig
 
 
 def main() -> None:

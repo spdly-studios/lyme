@@ -1,6 +1,6 @@
-# Cognis OS API and data contracts
+# Lyme API and data contracts
 
-Imports from `cognis_os` and its stage namespaces are the supported public API. Parser, analyzer, normalizer,
+Imports from `lyme` and its stage namespaces are the supported public API. Parser, analyzer, normalizer,
 and assembler modules are implementation details unless documented here.
 
 ## Pipeline contracts

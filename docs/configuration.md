@@ -40,7 +40,7 @@ alone does not change the configured format.
 ## KSE configuration
 
 ```python
-from cognis_os.kse import CorrelationConfig, KSEConfig, ModeConfig
+from lyme.kse import CorrelationConfig, KSEConfig, ModeConfig
 
 config = KSEConfig(
     correlation=CorrelationConfig(pearson_threshold=0.7, min_data_coverage=0.8),
@@ -71,7 +71,7 @@ chosen configuration with every generated model.
 ## OMS configuration
 
 ```python
-from cognis_os.oms import OMSConfig
+from lyme.oms import OMSConfig
 
 config = OMSConfig(
     min_influence_confidence=0.6,
@@ -88,6 +88,6 @@ threshold based on association strength; test changes against expected domain gr
 
 ## Environment and secrets
 
-Cognis OS itself requires no credentials. Do not put data-store passwords or API tokens in
+Lyme itself requires no credentials. Do not put data-store passwords or API tokens in
 UOC TOML files. Keep deployment secrets in the host application's secret manager and pass
-only paths/data streams into Cognis OS.
+only paths/data streams into Lyme.

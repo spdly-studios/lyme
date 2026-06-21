@@ -3,7 +3,7 @@
 ## Repository layout
 
 ```text
-src/cognis_os/       unified production package and CLI
+src/lyme/            unified production package and CLI
   uoc/               canonicalization stage
   kse/               discovery stage
   oms/               synthesis stage

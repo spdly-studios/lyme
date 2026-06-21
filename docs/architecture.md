@@ -1,4 +1,4 @@
-# Cognis OS architecture
+# Lyme architecture
 
 ## System pipeline
 
@@ -83,9 +83,9 @@ never inside `src/`. Package source is immutable at runtime.
 ## Package boundaries
 
 ```text
-src/cognis_os/uoc/   ingestion and canonical representation
-src/cognis_os/kse/   statistical analysis and knowledge assembly
-src/cognis_os/oms/   operational theory and simulation
+src/lyme/uoc/        ingestion and canonical representation
+src/lyme/kse/        statistical analysis and knowledge assembly
+src/lyme/oms/        operational theory and simulation
 ```
 
 The package-root exports documented in `API.md` form the supported integration surface.

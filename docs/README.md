@@ -1,6 +1,6 @@
-# Cognis OS documentation
+# Lyme documentation
 
-This directory documents Cognis OS version 0.1.x. Start with the user guides if you
+This directory documents Lyme version 0.1.x. Start with the user guides if you
 want to run the package; use the maintainer guides when changing or releasing it.
 
 ## User documentation
@@ -22,7 +22,7 @@ want to run the package; use the maintainer guides when changing or releasing it
 
 ## Which interface should I use?
 
-Use the unified `cognis_os` Python API for applications and services. It passes the complete in-memory model
+Use the unified `lyme` Python API for applications and services. It passes the complete in-memory model
 between components and avoids serialization loss. Use the three console commands for
 shell pipelines or batch stages that intentionally exchange files.
 
